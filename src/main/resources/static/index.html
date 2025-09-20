@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Maintenance Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>🚗 Car Maintenance Tracker</h1>
+        <p>Keep your vehicles in perfect condition</p>
+    </header>
+
+    <div class="stats" id="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="total-cars">0</div>
+            <div class="stat-label">Total Cars</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="total-records">0</div>
+            <div class="stat-label">Maintenance Records</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="recent-records">0</div>
+            <div class="stat-label">This Month</div>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>
+                <span class="icon">🚙</span>
+                Add New Car
+            </h2>
+            <form id="car-form">
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <input type="text" id="make" name="make" required placeholder="e.g., Toyota, Honda, BMW">
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" name="model" required placeholder="e.g., Camry, Civic, X5">
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" id="year" name="year" required min="1900" max="2025" placeholder="e.g., 2020">
+                </div>
+                <button type="submit" class="btn">Add Car</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>
+                <span class="icon">🔧</span>
+                Add Maintenance Record
+            </h2>
+            <form id="maintenance-form">
+                <div class="form-group">
+                    <label for="carSelect">Select Car</label>
+                    <select id="carSelect" name="carId" required>
+                        <option value="">Choose a car...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Service Description</label>
+                    <input type="text" id="description" name="description" required placeholder="e.g., Oil change, Tire rotation">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <button type="submit" class="btn">Add Record</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>
+            <span class="icon">🚗</span>
+            My Cars
+        </h2>
+        <div id="car-list" class="car-grid">
+            <div class="loading">Loading cars...</div>
+        </div>
+    </div>
+
+    <div class="maintenance-list">
+        <h2>
+            <span class="icon">📋</span>
+            Maintenance History
+        </h2>
+        <div id="record-list">
+            <div class="loading">Loading maintenance records...</div>
+        </div>
+    </div>
+</div>
+
+<div class="notification" id="notification"></div>
+
+<script src="js/car.js"></script>
+</body>
+</html>
