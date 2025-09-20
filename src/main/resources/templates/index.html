@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Car Maintenance Tracker</h1>
+
+<form id="carForm">
+    <label>Make:</label>
+    <input type="text" id="make"><br>
+    <label>Model:</label>
+    <input type="text" id="model"><br>
+    <label>Year:</label>
+    <input type="number" id="year"><br>
+    <button type="submit">Add Car</button>
+</form>
+
+<script th:src="@{/js/car.js}"></script>
+</body>
+</html>
