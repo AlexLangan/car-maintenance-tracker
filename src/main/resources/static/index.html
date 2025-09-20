@@ -81,8 +81,32 @@
             <span class="icon">🚗</span>
             My Cars
         </h2>
-        <div id="car-list" class="car-grid">
-            <div class="loading">Loading cars...</div>
+        <div class="table-controls">
+            <input type="text" id="car-search" placeholder="Search cars..." class="search-input">
+            <select id="car-sort" class="sort-select">
+                <option value="make">Sort by Make</option>
+                <option value="year">Sort by Year</option>
+                <option value="model">Sort by Model</option>
+            </select>
+        </div>
+        <div class="table-container">
+            <table id="cars-table" class="data-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Records</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="cars-tbody">
+                <tr>
+                    <td colspan="6" class="loading-cell">Loading cars...</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -91,8 +115,35 @@
             <span class="icon">📋</span>
             Maintenance History
         </h2>
-        <div id="record-list">
-            <div class="loading">Loading maintenance records...</div>
+        <div class="table-controls">
+            <input type="text" id="maintenance-search" placeholder="Search maintenance records..." class="search-input">
+            <select id="maintenance-filter" class="sort-select">
+                <option value="all">All Cars</option>
+            </select>
+            <select id="maintenance-sort" class="sort-select">
+                <option value="date-desc">Newest First</option>
+                <option value="date-asc">Oldest First</option>
+                <option value="car">By Car ID</option>
+            </select>
+        </div>
+        <div class="table-container">
+            <table id="maintenance-table" class="data-table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Car</th>
+                    <th>Make/Model</th>
+                    <th>Description</th>
+                    <th>Days Ago</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="maintenance-tbody">
+                <tr>
+                    <td colspan="6" class="loading-cell">Loading maintenance records...</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

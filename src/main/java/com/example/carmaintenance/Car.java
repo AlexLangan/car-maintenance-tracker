@@ -17,6 +17,9 @@ public class Car {
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
     private List<MaintenanceRecord> maintenanceRecords;
 
+    // JPA requires no-arg constructor
+    public Car() {}
+
     // getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
